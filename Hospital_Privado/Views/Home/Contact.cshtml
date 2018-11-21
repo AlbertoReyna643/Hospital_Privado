@@ -1,0 +1,141 @@
+﻿@{
+    ViewBag.Title = "Contact";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<link href="~/Content/My_Bootstrap/css/my_css/estilos.css" rel="stylesheet" />
+<div class="row">
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="~/Content/My_Bootstrap/img/my_img/iconos/whatsapp.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="~/Content/My_Bootstrap/img/my_img/iconos/facebook.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social img-tw" src="~/Content/My_Bootstrap/img/my_img/iconos/twitter.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="~/Content/My_Bootstrap/img/my_img/iconos/github.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="../Content/My_Bootstrap/img/my_img/iconos/telegram.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social img-tw" src="~/Content/My_Bootstrap/img/my_img/iconos/youtube.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="../Content/My_Bootstrap/img/my_img/iconos/localizacion.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social" src="../Content/My_Bootstrap/img/my_img/iconos/mensaje.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+    <div class="col-md-4">
+        <address>
+            <img class="img-social img-tw" src="../Content/My_Bootstrap/img/my_img/iconos/telefono.png" alt="Alternate Text" />
+        </address>
+        <address>
+            <strong>Support:</strong>   <a href="mailto:Support@example.com">Support@example.com</a><br />
+            <strong>Marketing:</strong> <a href="mailto:Marketing@example.com">Marketing@example.com</a>
+        </address>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-6">
+        <div id='printoutPanel'></div>
+        <h1>Aquí nos ubicamos!</h1>
+        <div id='myMap2' style='width: 50vw; height: 50vh;'></div>
+    </div>
+</div>
+
+<div class="row">
+    <div class="col-md-offset-2 col-md-6">
+        <div id='printoutPanel'></div>
+        <h1>Aquí nos ubicamos!</h1>
+        <div id='myMap' style='width: 50vw; height: 50vh;'></div>
+    </div>
+</div>
+
+<script>
+    function loadMapScenario() {
+        var loc1 = new Microsoft.Maps.Location(19.409116, -99.317112); //Schloßplatz coords
+
+        var navigationBarMode1 = Microsoft.Maps.NavigationBarMode;
+        var map1 = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+            credentials: 'AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE',
+            navigationBarMode: navigationBarMode1.compact, //uncomment to show/hide compact navigation bar
+            center: loc1,
+            zoom: 16,
+            showBreadcrumb: true
+        });
+
+        var loc2 = new Microsoft.Maps.Location(19.409116, -99.317112); //Schloßplatz coords
+
+        var navigationBarMode2 = Microsoft.Maps.NavigationBarMode;
+        var map2 = new Microsoft.Maps.Map(document.getElementById('myMap2'), {
+            credentials: 'AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE',
+            navigationBarMode: navigationBarMode2.compact, //uncomment to show/hide compact navigation bar
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            center: loc2,
+            zoom: 16,
+            showBreadcrumb: true
+        });
+    }
+</script>
+
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=experimental&callback=loadMapScenario' async defer></script>

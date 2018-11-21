@@ -1,0 +1,98 @@
+﻿@{
+    ViewBag.Title = "Nosotros";
+}
+<h2>@ViewBag.Title.</h2>
+<h3>@ViewBag.Message</h3>
+
+<h1>HOSPITAL PRIVADO</h1>
+
+<div class="row">
+    <div class="col-md-6">
+        <h2>MISION:</h2>
+        <p>
+            "El Hospital Privado es una organización prestadora de servicios de salud, interesada en el desarrollo,
+            motivación y compromiso de su recurso humano, que ofrece a sus pacientes un servicio de calidad y
+            seguridad a través de equipo médico de alta tecnología y sobre todo calidez humana".
+        </p>
+    </div>
+    <div class="col-md-6">
+        <h2>VISIÓN:</h2>
+        <p>
+            "Ser reconocido como uno de los modelos hospitalarios de mayor calidad asistencial y humanitaria en América".
+        </p>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-6">
+        <img src="~/Content/My_Bootstrap/img/my_img/iconos/mision.png" alt="Alternate Text" width="50px" style="display:block;margin:auto;" />
+    </div>
+    <div class="col-md-6">
+        <img src="../Content/My_Bootstrap/img/my_img/iconos/vision.png" alt="Alternate Text" width="70px" style="display:block;margin:auto;" />
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-4"></div>
+    <div class="col-md-6">
+        <h2>VALORES:</h2>
+        <ul>
+            <li>"Calidad con trato humano".</li>
+            <li>"Espíritu de servicio".</li>
+            <li>"Compromiso.</li>
+        </ul>
+    </div>
+</div>
+<div class="row">
+    <div class="col-md-2"></div>
+    <div class="col-md-6">
+        <img src="~/Content/My_Bootstrap/img/my_img/iconos/valores.png" alt="Alternate Text" width="70px" style="display:block;margin:auto;" />
+    </div>
+</div>
+<div id='printoutPanel'></div>
+<h1>Map 1: </h1>
+<div id='myMap' style='width: 30vw; height: 30vh;'></div>
+<h1>Map 2:</h1>
+<div id='myMap2' style='width: 30vw; height: 30vh;'></div>
+<script>
+    function loadMapScenario() {
+        var loc1 = new Microsoft.Maps.Location(19.409116, -99.317112); //Schloßplatz coords
+
+        var navigationBarMode1 = Microsoft.Maps.NavigationBarMode;
+        var map1 = new Microsoft.Maps.Map(document.getElementById('myMap'), {
+            credentials: 'AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE',
+            navigationBarMode: navigationBarMode1.compact, //uncomment to show/hide compact navigation bar
+            center: loc1,
+            zoom: 16,
+            showBreadcrumb: true
+        });
+
+        var loc2 = new Microsoft.Maps.Location(19.409116, -99.317112); //Schloßplatz coords
+
+        var navigationBarMode2 = Microsoft.Maps.NavigationBarMode;
+        var map2 = new Microsoft.Maps.Map(document.getElementById('myMap2'), {
+            credentials: 'AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE',
+            navigationBarMode: navigationBarMode2.compact, //uncomment to show/hide compact navigation bar
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            center: loc2,
+            zoom: 16,
+            showBreadcrumb: true
+        });
+    }
+</script>
+
+<script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=experimental&callback=loadMapScenario' async defer></script>
+
+<!--<script type="text/javascript" src="https://www.bing.com/api/maps/sdk/mapcontrol?callback=GetMap?key=AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE?setMkt=es-MX?setLang=es"async defer></script>-->
+<!--<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap'async defer></script>
+<div id="myMap" style="position:relative;width:600px;height:460px;"></div>
+
+<script type="text/javascript">
+    function GetMap() {
+        var map = new Microsot.Maps.Map("myMap", {
+            credentials: 'AiekWbeNgZoREP6PlIs6FzFSo_d0ipJ8JZIcnK6QZiBs76TwoN0uS7cpQ6N6MwtE',
+            center: new Microsot.Maps.Location(19.409116, -99.317112),
+            mapTypeId: Microsot.Maps.MapTypeId.aerial,
+            zoom: 18,
+            showBreadcrumb: true
+        });
+    }
+</script>-->

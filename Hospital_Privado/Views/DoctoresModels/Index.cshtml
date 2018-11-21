@@ -1,0 +1,98 @@
+﻿@model IEnumerable<Hospital_Privado.Models.DoctoresModels>
+
+@{
+    ViewBag.Title = "Index";
+}
+
+<link href="~/Content/My_Bootstrap/css/my_css/tablas.css" rel="stylesheet" />
+<h2>Doctores Registrados en la Base de Datos</h2>
+<div class="row">
+    <img alt="image" class="img-circle" src="~/Content/My_Bootstrap/img/my_img/iconos/doctor.png" style="width:90px;" />
+</div>
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-6">
+    <a href="~/AdministradoresModels/Create" class="btn btn-primary">Registrar nuevo Doctor</a>
+    </div>
+</div>
+
+    <p>
+        @*Html.ActionLink("Create New", "Create")*@
+    </p>
+    <table class="table">
+        <tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Tipo.Tipo)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Doctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Materno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Edad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Nacimiento)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Domicilio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Estado)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Ciudad)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Curp)
+            </th>
+            <th>Acciones</th>
+        </tr>
+
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Tipo.Tipo)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Doctor)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Materno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Edad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Fecha_Nacimiento)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Domicilio)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Estado)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Ciudad)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Curp)
+                </td>
+                <td>
+                    @Html.ActionLink("Edit", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Details", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Delete", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>

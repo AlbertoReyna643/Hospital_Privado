@@ -1,0 +1,105 @@
+﻿@{
+    ViewBag.Title = "Home Page";
+}
+
+@if (ViewBag.rol == 1)
+{
+    <div class="jumbotron">
+        <h1>Hospital Privado</h1>
+        <p class="lead">Tú salud es importante y nos interesa tu bien estar.</p>
+        <div class="img-responsive">
+            <img src="../Content/My_Bootstrap/img/my_img/hosp3.jpg" class="top-izq" width="100%" />
+        </div>
+    </div>
+}
+else if (ViewBag.rol == 2)
+{
+    <div class="jumbotron">
+        <h1>Hospital Privado</h1>
+        <p class="lead">Tú salud es importante y nos interesa tu bien estar.</p>
+        <div class="img-responsive">
+            <img src="../Content/My_Bootstrap/img/my_img/doctores.jpg" class="top-izq" width="100%" />
+        </div>
+    </div>
+}
+else if (ViewBag.rol == 3)
+{
+    <div class="jumbotron">
+        <h1>Hospital Privado</h1>
+        <p class="lead">Tú salud es importante y nos interesa tu bien estar.</p>
+        <div class="img-responsive">
+            <img src="../Content/My_Bootstrap/img/my_img/pacientes.jpg" class="top-izq" width="100%" />
+        </div>
+    </div>
+}
+else
+{
+    <div class="jumbotron">
+        <h1>Hospital Privado</h1>
+        <p class="lead">Tú salud es importante y nos interesa tu bien estar.</p>
+        <div class="img-responsive">
+            <img src="../Content/My_Bootstrap/img/my_img/hosp4.jpg" class="top-izq" width="100%" />
+        </div>
+    </div>
+}
+
+<center>
+    <h2>Clinica Privada</h2>
+</center>
+<div class="row">
+    <div class="col-md-6">
+        <p>
+            Es una Institución de Asistencia Privada (I.A.P.)
+            dedicada a cuidar la salud y sABCeguridad de sus pacientes a
+            través de las mejores prácticas. En sus Centros de Alta Especialidad
+            como el Centro de Cáncer, Centro Cardiovascular, Centro de Nutrición
+            & Obesidad, Centro de Trasplantes, Centro Neurológico, Centro de
+            Gineco-obstetricia y Pediatría, Centro de Ortopedia y Traumatología,
+            Centro de Rehabilitación Internsiva y el Departamento de Medicina Preventiva,
+            brinda un servicio seguro y de calidad, caracterizado por una orientación al
+            paciente, y cuenta con una amplia gama de servicios médicos y hospitalarios,
+            los cuales están al nivel de los mejores del mundo, característica que los ha
+            distinguido desde hace 130 años.
+        </p>
+    </div>
+    <div class="col-md-6">
+        <p>
+            El Centro Médico ABC cuenta con equipos multidisciplinarios de médicos reconocidos
+            internacionalmente y la tecnología más avanzada en las diversas especialidades y
+            subespecialidades, lo que lo ha llevado a ser el único centro de salud  en México
+            en contar con las re-acreditaciones que obtuvieron sus dos Campus, Observatorio y
+            Santa Fe, por parte de la Joint Commission International (JCI) y el Consejo de
+            Salubridad General (CSG), además del Premio  Nacional e Iberoamericano de Calidad,
+            los cuales avalan su estado como una institución de salud apegada a los más altos
+            estándares de calidad y seguridad del mundo. Además, como Institución de Asistencia
+            Privada (I.A.P.), el Centro Médico ABC destina recursos financieros y talento humano
+            cada año a programas de salud que benefician a miles de personas en situación
+            económicamente vulnerable; a la formación de médicos especialistas; y a la investigación,
+            para mejorar la calidad de vida de la comunidad a la que sirve.
+        </p>
+    </div>
+    @if (ViewBag.rol == 1)
+    {
+        <div class="col-md-6">
+            <p>
+                Usuario = Administrador
+            </p>
+        </div>
+    }
+    else if (ViewBag.rol == 2)
+    {
+        <div class="col-md-6">
+            <p>
+                Usuario = Doctor
+            </p>
+        </div>
+    }
+    else if (ViewBag.rol == 3)
+    {
+        <div class="col-md-6">
+            <p>
+                Usuario = Paciente
+            </p>
+        </div>
+    }
+</div>
