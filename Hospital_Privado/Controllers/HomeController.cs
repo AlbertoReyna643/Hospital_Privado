@@ -22,6 +22,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.rol = RolId;
 				var user = currentUser.UserName;
 				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
 			}
 			return View();
 		}

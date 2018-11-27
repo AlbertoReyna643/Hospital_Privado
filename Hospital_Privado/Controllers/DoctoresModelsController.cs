@@ -7,6 +7,8 @@ using System.Net;
 using System.Web;
 using System.Web.Mvc;
 using Hospital_Privado.Models;
+using Microsoft.AspNet.Identity;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Hospital_Privado.Controllers
 {
@@ -17,14 +19,38 @@ namespace Hospital_Privado.Controllers
         // GET: DoctoresModels
         public ActionResult Index()
         {
-            var doctoresModels = db.DoctoresModels.Include(d => d.Tipo);
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			var doctoresModels = db.DoctoresModels.Include(d => d.Tipo);
             return View(doctoresModels.ToList());
         }
 
         // GET: DoctoresModels/Details/5
         public ActionResult Details(int? id)
         {
-            if (id == null)
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -39,7 +65,19 @@ namespace Hospital_Privado.Controllers
         // GET: DoctoresModels/Create
         public ActionResult Create()
         {
-            ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo");
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo");
             return View();
         }
 
@@ -50,7 +88,19 @@ namespace Hospital_Privado.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Create([Bind(Include = "Id,Nombre_Doctor,Apellido_Paterno,Apellido_Materno,Edad,Fecha_Nacimiento,Domicilio,Estado,Ciudad,Curp,TipoId")] DoctoresModels doctoresModels)
         {
-            if (ModelState.IsValid)
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			if (ModelState.IsValid)
             {
                 db.DoctoresModels.Add(doctoresModels);
                 db.SaveChanges();
@@ -64,7 +114,19 @@ namespace Hospital_Privado.Controllers
         // GET: DoctoresModels/Edit/5
         public ActionResult Edit(int? id)
         {
-            if (id == null)
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -84,7 +146,19 @@ namespace Hospital_Privado.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult Edit([Bind(Include = "Id,Nombre_Doctor,Apellido_Paterno,Apellido_Materno,Edad,Fecha_Nacimiento,Domicilio,Estado,Ciudad,Curp,TipoId")] DoctoresModels doctoresModels)
         {
-            if (ModelState.IsValid)
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			if (ModelState.IsValid)
             {
                 db.Entry(doctoresModels).State = EntityState.Modified;
                 db.SaveChanges();
@@ -97,7 +171,19 @@ namespace Hospital_Privado.Controllers
         // GET: DoctoresModels/Delete/5
         public ActionResult Delete(int? id)
         {
-            if (id == null)
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			if (id == null)
             {
                 return new HttpStatusCodeResult(HttpStatusCode.BadRequest);
             }
@@ -114,7 +200,19 @@ namespace Hospital_Privado.Controllers
         [ValidateAntiForgeryToken]
         public ActionResult DeleteConfirmed(int id)
         {
-            DoctoresModels doctoresModels = db.DoctoresModels.Find(id);
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+			}
+			DoctoresModels doctoresModels = db.DoctoresModels.Find(id);
             db.DoctoresModels.Remove(doctoresModels);
             db.SaveChanges();
             return RedirectToAction("Index");

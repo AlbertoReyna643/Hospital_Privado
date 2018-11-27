@@ -14,6 +14,7 @@
 </head>
 
 <body>
+    @using Microsoft.AspNet.Identity
     @if (Request.IsAuthenticated)
     {
         <div id="wrapper">
@@ -62,8 +63,8 @@
                             </li>
                         }
                         else if (ViewBag.rol == 3)
-                        {
-                            <li><a href="../" style="background-color:#db9fe0; color:white"><i class="fa fa-user"></i> <span class="nav-label">Paciente</span></a></li>
+                        {<!-- #db9fe0 -->
+                            <li><a href="../" style="background-color:#c460cc; color:white"><i class="fa fa-user"></i> <span class="nav-label">Paciente</span></a></li>
                             <li>
                                 <a><i class="glyphicon glyphicon-book"></i> <span class="nav-label">Catalogos</span><span class="fa arrow"></span></a>
                                 <ul class="nav nav-second-level collapse">

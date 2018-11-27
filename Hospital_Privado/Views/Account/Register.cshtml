@@ -1,10 +1,12 @@
 ﻿@model Hospital_Privado.Models.RegisterViewModel
 @{
-    ViewBag.Title = "Register";
+    ViewBag.Title = "Regístrate";
 }
 
 <h2>@ViewBag.Title.</h2>
-
+<div class="row">
+    <img alt="image" class="img-circle" src="~/Content/My_Bootstrap/img/my_img/iconos/adduser1.png" style="width:90px; margin:auto; display:block" />
+</div>
 @using (Html.BeginForm("Register", "Account", FormMethod.Post, new { @class = "form-horizontal", role = "form" }))
 {
     @Html.AntiForgeryToken()
