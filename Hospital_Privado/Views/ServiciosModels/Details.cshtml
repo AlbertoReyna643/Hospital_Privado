@@ -1,13 +1,11 @@
 ﻿@model Hospital_Privado.Models.ServiciosModels
 
 @{
-    ViewBag.Title = "Details";
+    ViewBag.Title = "Detalles";
 }
 
-<h2>Details</h2>
-
 <div>
-    <h4>ServiciosModels</h4>
+    <h2>Detalles del Servicio</h2>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -21,6 +19,7 @@
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-warning" style="color:#000;">@Html.ActionLink("Editar", "Edit", new { id = Model.Id })</button>
+    <a href="~/ServiciosModels/Index" class="btn" style="background-color:#ed5666; color:#fff;">Regresar</a>
+    @*Html.ActionLink("Back to List", "Index")*@
 </p>

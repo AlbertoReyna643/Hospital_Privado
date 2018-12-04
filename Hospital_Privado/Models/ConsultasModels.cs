@@ -32,5 +32,9 @@ namespace Hospital_Privado.Models
 		public int Hora_Atencion { get; set; }
 		[Required]
 		public string Fecha_Atencion { get; set; }
+
+		public int? Validar { get; set; }
+		public string Comentario { get; set; }
+		public int? Calificacion { get; set; }
 	}
 }

@@ -4,11 +4,10 @@
     ViewBag.Title = "Delete";
 }
 
-<h2>Delete</h2>
+<h2>Eliminar el Doctor</h2>
 
-<h3>Are you sure you want to delete this?</h3>
 <div>
-    <h4>DoctoresModels</h4>
+    <h4>Estas a punto de eliminar un Doctor ¿Estas seguro de hacerlo?</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -93,13 +92,14 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a href="~/DoctoresModels/Index" class="btn" style="background-color:#fd8d0e; color:#fff;">Regresar</a>
-        @*Html.ActionLink("Back to List", "Index")*@
-    </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a href="~/DoctoresModels/Index" class="btn" style="background-color:#fd8d0e; color:#fff;">Regresar</a>
+            @*Html.ActionLink("Back to List", "Index")*@
+        </div>
     }
 </div>

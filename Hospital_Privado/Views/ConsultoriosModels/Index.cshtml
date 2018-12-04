@@ -2,32 +2,50 @@
 
 @{
     ViewBag.Title = "Index";
+    Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Index</h2>
+<link href="~/Content/My_Bootstrap/css/my_css/tablas.css" rel="stylesheet" />
+<h2>Consultorios Registrados en la Base de Datos</h2>
+<div class="row">
+    <img alt="image" class="img-circle" src="~/Content/My_Bootstrap/img/my_img/iconos/admin.png" style="width:90px;" />
+</div>
+<div class="row">
+    <div class="col-md-5"></div>
+    <div class="col-md-5">
+        <a href="~/ConsultoriosModels/Create" class="btn btn-primary">Registrar nuevo Consultorio</a>
+    </div>
+</div>
 
 <p>
-    @Html.ActionLink("Create New", "Create")
+    @*Html.ActionLink("Create New", "Create")*@
 </p>
 <table class="table">
     <tr>
         <th>
             @Html.DisplayNameFor(model => model.Consultorios)
         </th>
-        <th></th>
+        <th>
+            @Html.DisplayNameFor(model => model.Descripcion)
+        </th>
+        <th>Acciones</th>
     </tr>
 
-@foreach (var item in Model) {
-    <tr>
-        <td>
-            @Html.DisplayFor(modelItem => item.Consultorios)
-        </td>
-        <td>
-            @Html.ActionLink("Edit", "Edit", new { id=item.Id }) |
-            @Html.ActionLink("Details", "Details", new { id=item.Id }) |
-            @Html.ActionLink("Delete", "Delete", new { id=item.Id })
-        </td>
-    </tr>
-}
+    @foreach (var item in Model)
+    {
+        <tr>
+            <td>
+                @Html.DisplayFor(modelItem => item.Consultorios)
+            </td>
+            <td>
+                @Html.DisplayFor(modelItem => item.Descripcion)
+            </td>
+            <td>
+                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+            </td>
+        </tr>
+    }
 
 </table>

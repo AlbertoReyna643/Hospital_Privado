@@ -30,7 +30,7 @@ namespace Hospital_Privado.Controllers
 
 		public ActionResult About()
 		{
-			ViewBag.Message = "Your application description page.";
+			ViewBag.Message = "Acerca de nosotros";
 			if (Request.IsAuthenticated)
 			{
 				var currentUserId = User.Identity.GetUserId();
@@ -46,7 +46,7 @@ namespace Hospital_Privado.Controllers
 
 		public ActionResult Contact()
 		{
-			ViewBag.Message = "Your contact page.";
+			ViewBag.Message = "Contacto de la pagina.";
 			if (Request.IsAuthenticated)
 			{
 				var currentUserId = User.Identity.GetUserId();

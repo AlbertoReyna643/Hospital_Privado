@@ -84,7 +84,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Consultorios")] ConsultoriosModels consultoriosModels)
+        public ActionResult Create([Bind(Include = "Id,Consultorios,Descripcion")] ConsultoriosModels consultoriosModels)
         {
 			if (Request.IsAuthenticated)
 			{
@@ -140,7 +140,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Consultorios")] ConsultoriosModels consultoriosModels)
+        public ActionResult Edit([Bind(Include = "Id,Consultorios,Descripcion")] ConsultoriosModels consultoriosModels)
         {
 			if (Request.IsAuthenticated)
 			{

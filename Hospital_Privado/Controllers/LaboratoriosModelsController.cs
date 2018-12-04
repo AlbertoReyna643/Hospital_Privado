@@ -84,7 +84,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Laboratorio")] LaboratoriosModels laboratoriosModels)
+        public ActionResult Create([Bind(Include = "Id,Laboratorio,Descripcion")] LaboratoriosModels laboratoriosModels)
         {
 			if (Request.IsAuthenticated)
 			{
@@ -140,7 +140,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Laboratorio")] LaboratoriosModels laboratoriosModels)
+        public ActionResult Edit([Bind(Include = "Id,Laboratorio,Descripcion")] LaboratoriosModels laboratoriosModels)
         {
 			if (Request.IsAuthenticated)
 			{

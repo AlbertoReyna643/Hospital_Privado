@@ -5,10 +5,9 @@
     Layout = "~/Views/Shared/_Layout.cshtml";
 }
 
-<h2>Details</h2>
+<h2>Detalles de la Consulta</h2>
 
 <div>
-    <h4>ConsultasModels</h4>
     <hr />
     <dl class="dl-horizontal">
         <dt>
@@ -75,9 +74,34 @@
             @Html.DisplayFor(model => model.Fecha_Atencion)
         </dd>
 
+        <dt>
+            @Html.DisplayNameFor(model => model.Validar)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Validar)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Comentario)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Comentario)
+        </dd>
+
+        <dt>
+            @Html.DisplayNameFor(model => model.Calificacion)
+        </dt>
+
+        <dd>
+            @Html.DisplayFor(model => model.Calificacion)
+        </dd>
+
     </dl>
 </div>
 <p>
-    @Html.ActionLink("Edit", "Edit", new { id = Model.Id }) |
-    @Html.ActionLink("Back to List", "Index")
+    <button class="btn btn-warning">@Html.ActionLink("Edit", "Edit", new { id = Model.Id })</button> |
+    <a href="~/ConsultasModels/Index" class="btn" style="background-color:#ed5666; color:#fff;">Regresar</a>
+    @*Html.ActionLink("Back to List", "Index")*@
 </p>

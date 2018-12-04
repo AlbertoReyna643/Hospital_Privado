@@ -12,5 +12,6 @@ namespace Hospital_Privado.Models
 		public int Id { get; set; }
 		[Required]
 		public string Laboratorio { get; set; }
+		public string Descripcion { get; set; }
 	}
 }

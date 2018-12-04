@@ -76,5 +76,9 @@ namespace Hospital_Privado.Models
 		public System.Data.Entity.DbSet<Hospital_Privado.Models.ServiciosModels> ServiciosModels { get; set; }
 
 		public System.Data.Entity.DbSet<Hospital_Privado.Models.ConsultasModels> ConsultasModels { get; set; }
+
+		//public System.Data.Entity.DbSet<Hospital_Privado.Models.ApplicationUser> ApplicationUsers { get; set; }
+
+		//public System.Data.Entity.DbSet<Hospital_Privado.Models.ApplicationUser> ApplicationUsers { get; set; }
 	}
 }
