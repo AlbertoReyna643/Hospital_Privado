@@ -90,7 +90,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Descripcion,DoctoresId,PacientesId,LaboratoriosId,ConsultoriosId,ServiciosId,Hora_Atencion,Fecha_Atencion,Validar,Comentario,Calificacion")] ConsultasModels consultasModels)
+        public ActionResult Create([Bind(Include = "Id,Descripcion,DoctoresId,PacientesId,LaboratoriosId,ConsultoriosId,ServiciosId,Hora_Atencion,Fecha_Atencion,Validar,ValidarAdmin,Comentario,Calificacion")] ConsultasModels consultasModels)
         {
 			if (Request.IsAuthenticated)
 			{
@@ -156,7 +156,7 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Descripcion,DoctoresId,PacientesId,LaboratoriosId,ConsultoriosId,ServiciosId,Hora_Atencion,Fecha_Atencion,Validar,Comentario,Calificacion")] ConsultasModels consultasModels)
+        public ActionResult Edit([Bind(Include = "Id,Descripcion,DoctoresId,PacientesId,LaboratoriosId,ConsultoriosId,ServiciosId,Hora_Atencion,Fecha_Atencion,Validar,ValidarAdmin,Comentario,Calificacion")] ConsultasModels consultasModels)
         {
 			if (Request.IsAuthenticated)
 			{

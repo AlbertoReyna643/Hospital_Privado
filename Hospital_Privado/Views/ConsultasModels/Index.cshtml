@@ -20,7 +20,7 @@
 <p>
     @*Html.ActionLink("Create New", "Create")*@
 </p>
-<table class="table">
+<table class="table-responsive">
     <tr>
         <th>Estatus</th>
         <th>
@@ -48,15 +48,23 @@
             @Html.DisplayNameFor(model => model.Fecha_Atencion)
         </th>
         <th>
-            @Html.DisplayNameFor(model => model.Validar)
+            Validación del Doctor
+            @*Html.DisplayNameFor(model => model.Validar)*@
         </th>
+        @if (ViewBag.rol != 3)
+        {
+            <th>
+                Validación del Administrador
+                @*Html.DisplayNameFor(model => model.ValidarAdmin)*@
+            </th>
+        }
         <th>
             @Html.DisplayNameFor(model => model.Comentario)
         </th>
         <th>
             @Html.DisplayNameFor(model => model.Calificacion)
         </th>
-        <th></th>
+        <th>Acciones</th>
     </tr>
 
     @foreach (var item in Model)
@@ -68,13 +76,20 @@
             <tr>
                 @if (item.Validar == null && item.Calificacion == null)
                 {
-                    <td style="background-color:#fd9240; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>
+                    <!--#fd9240-->
+                    <td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>
                 }
                 else if (item.Validar == 1 && item.Calificacion == null)
                 {
-                    <td style="background-color:#fdce30; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>
+                    <!--#fdce30-->
+                    <td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>
                 }
-                else if (item.Validar >= 1 && item.Calificacion > 0)
+                else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                {
+                    <!--#78fd30-->
+                    <td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>
+                }
+                else if (item.Validar >= 1 && item.ValidarAdmin >=1 && item.Calificacion > 0)
                 {
                     <td style="background-color:#78fd30; color:#fff;">OK</td>
                 }
@@ -104,6 +119,10 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Validar)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidarAdmin)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Comentario)
@@ -123,13 +142,20 @@
             <tr>
                 @if (item.Validar == null && item.Calificacion == null)
                 {
-                    <td style="background-color:#fd9240; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>
+                    <!--#fd9240-->
+                    <td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>
                 }
                 else if (item.Validar == 1 && item.Calificacion == null)
                 {
-                    <td style="background-color:#fdce30; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>
+                    <!--#fdce30-->
+                    <td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>
                 }
-                else if (item.Validar >= 1 && item.Calificacion > 0)
+                else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                {
+                    <!--#78fd30-->
+                    <td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>
+                }
+                else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
                 {
                     <td style="background-color:#78fd30; color:#fff;">OK</td>
                 }
@@ -159,6 +185,10 @@
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Validar)
+                </td>
+
+                <td>
+                    @Html.DisplayFor(modelItem => item.ValidarAdmin)
                 </td>
                 <td>
                     @Html.DisplayFor(modelItem => item.Comentario)
@@ -215,6 +245,11 @@
                 <td>
                     @Html.DisplayFor(modelItem => item.Validar)
                 </td>
+                <!--
+                <td>
+                    @*Html.DisplayFor(modelItem => item.ValidarAdmin)*@
+                </td>
+                -->
                 <td>
                     @Html.DisplayFor(modelItem => item.Comentario)
                 </td>

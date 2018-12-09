@@ -34,6 +34,7 @@ namespace Hospital_Privado.Models
 		public string Fecha_Atencion { get; set; }
 
 		public int? Validar { get; set; }
+		public int? ValidarAdmin { get; set; }
 		public string Comentario { get; set; }
 		public int? Calificacion { get; set; }
 	}

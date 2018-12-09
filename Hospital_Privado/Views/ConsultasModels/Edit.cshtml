@@ -12,6 +12,7 @@
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
         <div class="form-horizontal">
             <h4>Editar información de la Consulta</h4>
             <hr />
@@ -91,6 +92,14 @@
             </div>
 
             <div class="form-group">
+                @Html.LabelFor(model => model.ValidarAdmin, htmlAttributes: new { @class = "control-label col-md-2" })
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ValidarAdmin, new { htmlAttributes = new { @class = "form-control" } })
+                    @Html.ValidationMessageFor(model => model.ValidarAdmin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
                 @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control" } })
@@ -120,8 +129,9 @@ else if (ViewBag.rol == 2)
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
         <div class="form-horizontal">
-            <h4>ConsultasModels</h4>
+            <h4>Editar información de la Consulta</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
@@ -199,17 +209,25 @@ else if (ViewBag.rol == 2)
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*Html.LabelFor(model => model.ValidarAdmin, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.EditorFor(model => model.ValidarAdmin, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.ValidarAdmin, "", new { @class = "text-danger" })
+                </div>
+            </div>
+
+            <div class="form-group">
+                @*Html.LabelFor(model => model.Comentario, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.Comentario, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "display:none;" } })
                     @Html.ValidationMessageFor(model => model.Comentario, "", new { @class = "text-danger" })
                 </div>
             </div>
 
             <div class="form-group">
-                @Html.LabelFor(model => model.Calificacion, htmlAttributes: new { @class = "control-label col-md-2" })
+                @*Html.LabelFor(model => model.Calificacion, htmlAttributes: new { @class = "control-label col-md-2" })*@
                 <div class="col-md-10">
-                    @Html.EditorFor(model => model.Calificacion, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly" } })
+                    @Html.EditorFor(model => model.Calificacion, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "display:none;" } })
                     @Html.ValidationMessageFor(model => model.Calificacion, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -228,8 +246,9 @@ else if (ViewBag.rol == 3)
     using (Html.BeginForm())
     {
         @Html.AntiForgeryToken()
+
         <div class="form-horizontal">
-            <h4>ConsultasModels</h4>
+            <h4>Editar información de la Consulta</h4>
             <hr />
             @Html.ValidationSummary(true, "", new { @class = "text-danger" })
             @Html.HiddenFor(model => model.Id)
@@ -308,6 +327,13 @@ else if (ViewBag.rol == 3)
                 </div>
             </div>
 
+            <div class="form-group">
+                @*Html.LabelFor(model => model.ValidarAdmin, htmlAttributes: new { @class = "control-label col-md-2" })*@
+                <div class="col-md-10">
+                    @Html.EditorFor(model => model.ValidarAdmin, new { htmlAttributes = new { @class = "form-control", @readonly = "readonly", @style = "display:none;" } })
+                    @Html.ValidationMessageFor(model => model.ValidarAdmin, "", new { @class = "text-danger" })
+                </div>
+            </div>
             @if (Model.Validar == 1)
             {
                 <div class="form-group">
@@ -334,7 +360,6 @@ else if (ViewBag.rol == 3)
                 </div>
             </div>
         </div>
-
     }
 }
 
