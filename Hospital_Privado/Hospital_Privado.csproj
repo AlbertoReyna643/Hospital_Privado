@@ -300,22 +300,6 @@
     <Content Include="Views\ServiciosModels\Details.cshtml" />
     <Content Include="Views\ServiciosModels\Edit.cshtml" />
     <Content Include="Views\ServiciosModels\Index.cshtml" />
-    <Content Include="Views\DoctoresModels\Create.cshtml" />
-    <Content Include="Views\DoctoresModels\Delete.cshtml" />
-    <Content Include="Views\DoctoresModels\Details.cshtml" />
-    <Content Include="Views\DoctoresModels\Edit.cshtml" />
-    <Content Include="Views\DoctoresModels\Index.cshtml" />
-    <Content Include="Views\PacientesModels\Create.cshtml" />
-    <Content Include="Views\PacientesModels\Delete.cshtml" />
-    <Content Include="Views\PacientesModels\Details.cshtml" />
-    <Content Include="Views\PacientesModels\Edit.cshtml" />
-    <Content Include="Views\PacientesModels\Index.cshtml" />
-    <Content Include="Views\AdministradoresModels\Create.cshtml" />
-    <Content Include="Views\AdministradoresModels\Delete.cshtml" />
-    <Content Include="Views\AdministradoresModels\Details.cshtml" />
-    <Content Include="Views\AdministradoresModels\Edit.cshtml" />
-    <Content Include="Views\AdministradoresModels\Index.cshtml" />
-    <Content Include="Views\AdministradoresModels\View.cshtml" />
     <Content Include="Views\Home\Beneficios.cshtml" />
     <Content Include="Views\Home\Servicios.cshtml" />
     <Content Include="Views\ConsultoriosModels\Create.cshtml" />
@@ -338,6 +322,21 @@
     <Content Include="Views\ConsultasModels\Details.cshtml" />
     <Content Include="Views\ConsultasModels\Edit.cshtml" />
     <Content Include="Views\ConsultasModels\Index.cshtml" />
+    <Content Include="Views\AdministradoresModels\Create.cshtml" />
+    <Content Include="Views\AdministradoresModels\Delete.cshtml" />
+    <Content Include="Views\AdministradoresModels\Details.cshtml" />
+    <Content Include="Views\AdministradoresModels\Edit.cshtml" />
+    <Content Include="Views\AdministradoresModels\Index.cshtml" />
+    <Content Include="Views\DoctoresModels\Create.cshtml" />
+    <Content Include="Views\DoctoresModels\Delete.cshtml" />
+    <Content Include="Views\DoctoresModels\Details.cshtml" />
+    <Content Include="Views\DoctoresModels\Edit.cshtml" />
+    <Content Include="Views\DoctoresModels\Index.cshtml" />
+    <Content Include="Views\PacientesModels\Create.cshtml" />
+    <Content Include="Views\PacientesModels\Delete.cshtml" />
+    <Content Include="Views\PacientesModels\Details.cshtml" />
+    <Content Include="Views\PacientesModels\Edit.cshtml" />
+    <Content Include="Views\PacientesModels\Index.cshtml" />
   </ItemGroup>
   <ItemGroup>
     <Folder Include="App_Data\" />

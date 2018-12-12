@@ -30,13 +30,28 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
-			var administradoresModels = db.AdministradoresModels.Include(a => a.Tipo);
-            return View(administradoresModels.ToList());
+			return View(db.AdministradoresModels.ToList());
         }
 
-		// GET: AdministradoresModels/Details/5
-		public ActionResult Details(int? id)
+        // GET: AdministradoresModels/Details/5
+        public ActionResult Details(int? id)
         {
 			if (Request.IsAuthenticated)
 			{
@@ -49,6 +64,22 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
 			if (id == null)
             {
@@ -76,9 +107,24 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
-			ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo");
-            return View();
+			return View();
         }
 
         // POST: AdministradoresModels/Create
@@ -86,28 +132,15 @@ namespace Hospital_Privado.Controllers
         // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
         [HttpPost]
         [ValidateAntiForgeryToken]
-        public ActionResult Create([Bind(Include = "Id,Nombre_Administrador,Apellido_Paterno,Apellido_Materno,TipoId")] AdministradoresModels administradoresModels)
+        public ActionResult Create([Bind(Include = "Id,Nombre_Administrador,Apellido_Paterno,Apellido_Materno")] AdministradoresModels administradoresModels)
         {
-			if (Request.IsAuthenticated)
-			{
-				var currentUserId = User.Identity.GetUserId();
-				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
-				var currentUser = manager.FindById(currentUserId);
-				var RolId = currentUser.RolID;
-				ViewBag.rol = RolId;
-				var user = currentUser.UserName;
-				ViewBag.user = user;
-				var nombre = currentUser.Nombre;
-				ViewBag.nom = nombre;
-			}
-			if (ModelState.IsValid)
+            if (ModelState.IsValid)
             {
                 db.AdministradoresModels.Add(administradoresModels);
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
 
-            ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo", administradoresModels.TipoId);
             return View(administradoresModels);
         }
 
@@ -125,6 +158,22 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
 			if (id == null)
             {
@@ -135,17 +184,16 @@ namespace Hospital_Privado.Controllers
             {
                 return HttpNotFound();
             }
-            ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo", administradoresModels.TipoId);
             return View(administradoresModels);
         }
 
-        // POST: AdministradoresModels/Edit/5
-        // To protect from overposting attacks, please enable the specific properties you want to bind to, for 
-        // more details see https://go.microsoft.com/fwlink/?LinkId=317598.
-        [HttpPost]
-        [ValidateAntiForgeryToken]
-        public ActionResult Edit([Bind(Include = "Id,Nombre_Administrador,Apellido_Paterno,Apellido_Materno,TipoId")] AdministradoresModels administradoresModels)
-        {
+		// POST: AdministradoresModels/Edit/5
+		// To protect from overposting attacks, please enable the specific properties you want to bind to, for 
+		// more details see https://go.microsoft.com/fwlink/?LinkId=317598.
+		[HttpPost]
+		[ValidateAntiForgeryToken]
+		public ActionResult Edit([Bind(Include = "Id,Nombre_Administrador,Apellido_Paterno,Apellido_Materno")] AdministradoresModels administradoresModels)
+		{
 			if (Request.IsAuthenticated)
 			{
 				var currentUserId = User.Identity.GetUserId();
@@ -157,6 +205,22 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
 			if (ModelState.IsValid)
             {
@@ -164,7 +228,6 @@ namespace Hospital_Privado.Controllers
                 db.SaveChanges();
                 return RedirectToAction("Index");
             }
-            ViewBag.TipoId = new SelectList(db.TipoUsuariosModels, "Id", "Tipo", administradoresModels.TipoId);
             return View(administradoresModels);
         }
 
@@ -182,6 +245,22 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
 			if (id == null)
             {
@@ -211,6 +290,22 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
 			}
 			AdministradoresModels administradoresModels = db.AdministradoresModels.Find(id);
             db.AdministradoresModels.Remove(administradoresModels);
@@ -226,5 +321,5 @@ namespace Hospital_Privado.Controllers
             }
             base.Dispose(disposing);
         }
-	}
+    }
 }

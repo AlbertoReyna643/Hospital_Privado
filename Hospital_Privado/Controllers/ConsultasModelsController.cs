@@ -103,6 +103,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
 			}
 			if (ModelState.IsValid)
             {
@@ -133,6 +135,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
 			}
 			if (id == null)
             {
@@ -169,6 +173,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
 			}
 			if (ModelState.IsValid)
             {
@@ -198,6 +204,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
 			}
 			if (id == null)
             {
@@ -227,6 +235,8 @@ namespace Hospital_Privado.Controllers
 				ViewBag.user = user;
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
 			}
 			ConsultasModels consultasModels = db.ConsultasModels.Find(id);
             db.ConsultasModels.Remove(consultasModels);

@@ -11,14 +11,6 @@
     <hr />
     <dl class="dl-horizontal">
         <dt>
-            @Html.DisplayNameFor(model => model.Tipo.Tipo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tipo.Tipo)
-        </dd>
-
-        <dt>
             @Html.DisplayNameFor(model => model.Nombre_Administrador)
         </dt>
 
@@ -46,6 +38,6 @@
 </div>
 <p>
     <button class="btn btn-warning">@Html.ActionLink("Editar", "Edit", new { id = Model.Id })</button> |
-        <a href="~/AdministradoresModels/Index" class="btn" style="background-color:#ed5666; color:#fff;">Regresar</a>
-        @*Html.ActionLink("Back to List", "Index")*@
+    <a href="~/AdministradoresModels/Index" class="btn" style="background-color:#ed5666; color:#fff;">Regresar</a>
+    @*Html.ActionLink("Back to List", "Index")*@
 </p>

@@ -9,6 +9,7 @@
 <div class="row">
     <img alt="image" class="img-circle" src="~/Content/My_Bootstrap/img/my_img/iconos/admin.png" style="width:90px;" />
 </div>
+<!--
 <div class="row">
     <div class="col-md-5"></div>
     <div class="col-md-5">
@@ -18,12 +19,10 @@
 <p>
     @*Html.ActionLink("Create New", "Create")*@
 </p>
+-->
 
 <table class="table">
     <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Tipo.Tipo)
-        </th>
         <th>
             @Html.DisplayNameFor(model => model.Nombre_Administrador)
         </th>
@@ -41,9 +40,6 @@
     @foreach (var item in Model)
     {
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Tipo.Tipo)
-            </td>
             <td>
                 @Html.DisplayFor(modelItem => item.Nombre_Administrador)
             </td>

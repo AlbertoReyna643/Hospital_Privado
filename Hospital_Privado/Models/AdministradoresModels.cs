@@ -16,9 +16,7 @@ namespace Hospital_Privado.Models
 		public string Apellido_Paterno { get; set; }
 		[Required]
 		public string Apellido_Materno { get; set; }
-
-		public TipoUsuariosModels Tipo { get; set; }
-		public int? TipoId { get; set; }
+		
 
 	}
 }

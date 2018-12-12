@@ -11,13 +11,6 @@
     <h3>Estas a punto de eliminar a un administrador, ¿estás seguro de hacerlo?</h3>
     <hr />
     <dl class="dl-horizontal">
-        <dt>
-            @Html.DisplayNameFor(model => model.Tipo.Tipo)
-        </dt>
-
-        <dd>
-            @Html.DisplayFor(model => model.Tipo.Tipo)
-        </dd>
 
         <dt>
             @Html.DisplayNameFor(model => model.Nombre_Administrador)
@@ -45,13 +38,14 @@
 
     </dl>
 
-    @using (Html.BeginForm()) {
+    @using (Html.BeginForm())
+    {
         @Html.AntiForgeryToken()
 
-    <div class="form-actions no-color">
-        <input type="submit" value="Eliminar" class="btn btn-danger" /> |
-        <a href="~/AdministradoresModels/Index" class="btn" style="background-color:#fd8d0e; color:#fff;">Regresar</a>
-        @*Html.ActionLink("Back to List", "Index")*@
-    </div>
+        <div class="form-actions no-color">
+            <input type="submit" value="Eliminar" class="btn btn-danger" /> |
+            <a href="~/AdministradoresModels/Index" class="btn" style="background-color:#fd8d0e; color:#fff;">Regresar</a>
+            @*Html.ActionLink("Back to List", "Index")*@
+        </div>
     }
 </div>

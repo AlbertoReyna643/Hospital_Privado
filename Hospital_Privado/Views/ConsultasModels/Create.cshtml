@@ -140,7 +140,8 @@
             <div class="form-group">
                 @Html.LabelFor(model => model.DoctoresId, "DoctoresId", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
-                    @Html.DropDownList("DoctoresId", null, htmlAttributes: new { @class = "form-control" })
+                    @Html.DropDownList("DoctoresId", null, htmlAttributes: new { @class = "form-control", @readonly = "readonly", @style = "display:none;" })
+                    <input type="text" class="control-label col-md-2" value="@ViewBag.nom" readonly="readonly" />
                     @Html.ValidationMessageFor(model => model.DoctoresId, "", new { @class = "text-danger" })
                 </div>
             </div>
@@ -233,9 +234,17 @@
             </div>
 
             <div class="form-group">
+                <label style="color:red;" class = "control-label col-md-2">IMPORTANTE</label>
+                <div class="col-md-10">
+                    <label style="color:red;"class = "">Debes seleccionar tu nombre para que aparesca en tu sección de Consultas</label>
+                </div>
+            </div>
+
+            <div class="form-group">
                 @Html.LabelFor(model => model.PacientesId, "PacientesId", htmlAttributes: new { @class = "control-label col-md-2" })
                 <div class="col-md-10">
                     @Html.DropDownList("PacientesId", null, htmlAttributes: new { @class = "form-control" })
+                    <!--<input type="text" name="PacientesId" class="control-label col-md-2" value="" readonly="readonly" />-->
                     @Html.ValidationMessageFor(model => model.PacientesId, "", new { @class = "text-danger" })
                 </div>
             </div>

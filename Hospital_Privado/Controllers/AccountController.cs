@@ -10,6 +10,7 @@ using Microsoft.AspNet.Identity.Owin;
 using Microsoft.Owin.Security;
 using Hospital_Privado.Models;
 using System.Collections.Generic;
+using Microsoft.AspNet.Identity.EntityFramework;
 
 namespace Hospital_Privado.Controllers
 {
@@ -159,20 +160,30 @@ namespace Hospital_Privado.Controllers
         {
             if (ModelState.IsValid)
             {
-                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, RolID = model.RolID, Nombre = model.Nombre, Apellido_Paterno = model.Apellido_Paterno, Edad = model.Edad, Fecha_Nacimiento = model.Fecha_Nacimiento, Domicilio = model.Domicilio, Estado = model.Estado, Ciudad = model.Ciudad, Curp = model.Curp };
+                var user = new ApplicationUser { UserName = model.Email, Email = model.Email, RolID = model.RolID, Nombre = model.Nombre, Apellido_Paterno = model.Apellido_Paterno, Apellido_Materno = model.Apellido_Materno, Edad = model.Edad, Fecha_Nacimiento = model.Fecha_Nacimiento, Domicilio = model.Domicilio, Estado = model.Estado, Ciudad = model.Ciudad, Curp = model.Curp };
 				var result = await UserManager.CreateAsync(user, model.Password);
                 if (result.Succeeded)
                 {
                     await SignInManager.SignInAsync(user, isPersistent:false, rememberBrowser:false);
-                    
-                    // For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
-                    // Send an email with this link
-                    // string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
-                    // var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
-                    // await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
 
-                    return RedirectToAction("Index", "Home");
-                }
+					// For more information on how to enable account confirmation and password reset please visit https://go.microsoft.com/fwlink/?LinkID=320771
+					// Send an email with this link
+					// string code = await UserManager.GenerateEmailConfirmationTokenAsync(user.Id);
+					// var callbackUrl = Url.Action("ConfirmEmail", "Account", new { userId = user.Id, code = code }, protocol: Request.Url.Scheme);
+					// await UserManager.SendEmailAsync(user.Id, "Confirm your account", "Please confirm your account by clicking <a href=\"" + callbackUrl + "\">here</a>");
+					if (model.RolID == 1)
+					{
+						return RedirectToAction("Create", "AdministradoresModels");
+					}
+					if (model.RolID == 2)
+					{
+						return RedirectToAction("Create", "DoctoresModels");
+					}
+					if (model.RolID == 3)
+					{
+						return RedirectToAction("Create", "PacientesModels");
+					}
+				}
                 AddErrors(result);
             }
 

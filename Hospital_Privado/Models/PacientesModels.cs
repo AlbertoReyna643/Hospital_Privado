@@ -28,8 +28,6 @@ namespace Hospital_Privado.Models
 		public string Ciudad { get; set; }
 		[Required]
 		public string Curp { get; set; }
-
-		public TipoUsuariosModels Tipo { get; set; }
-		public int? TipoId { get; set; }
+		
 	}
 }

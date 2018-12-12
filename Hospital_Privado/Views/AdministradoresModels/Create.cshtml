@@ -19,7 +19,7 @@
             <label class="control-label col-md-2">Nombre</label>
             @*Html.LabelFor(model => model.Nombre_Administrador, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Nombre_Administrador, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Nombre_Administrador, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.nom, @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Nombre_Administrador, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -28,7 +28,7 @@
             <label class="control-label col-md-2">Apellido Paterno</label>
             @*Html.LabelFor(model => model.Apellido_Paterno, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Apellido_Paterno, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Apellido_Paterno, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.apep, @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Apellido_Paterno, "", new { @class = "text-danger" })
             </div>
         </div>
@@ -37,25 +37,16 @@
             <label class="control-label col-md-2">Apellido Materno</label>
             @*Html.LabelFor(model => model.Apellido_Materno, htmlAttributes: new { @class = "control-label col-md-2" })*@
             <div class="col-md-10">
-                @Html.EditorFor(model => model.Apellido_Materno, new { htmlAttributes = new { @class = "form-control" } })
+                @Html.EditorFor(model => model.Apellido_Materno, new { htmlAttributes = new { @class = "form-control", @Value = ViewBag.apem, @readonly = "readonly" } })
                 @Html.ValidationMessageFor(model => model.Apellido_Materno, "", new { @class = "text-danger" })
-            </div>
-        </div>
-
-        <div class="form-group">
-            <label class="control-label col-md-2">Tipo de Usuario</label>
-            @*Html.LabelFor(model => model.TipoId, "TipoId", htmlAttributes: new { @class = "control-label col-md-2" })*@
-            <div class="col-md-10">
-                @Html.DropDownList("TipoId", null, htmlAttributes: new { @class = "form-control" })
-                @Html.ValidationMessageFor(model => model.TipoId, "", new { @class = "text-danger" })
             </div>
         </div>
 
         <div class="form-group">
             <div class="col-md-offset-2 col-md-10">
                 <input type="submit" value="Crear" class="btn btn-primary" />
-                <input type="reset" value="Limpiar" class="btn btn-warning" />
-                <a href="../AdministradoresModels/Index" class="btn btn-danger">Regresar</a>
+                <!--<input type="reset" value="Limpiar" class="btn btn-warning" />
+                <a href="../AdministradoresModels/Index" class="btn btn-danger">Regresar</a>-->
             </div>
         </div>
     </div>
