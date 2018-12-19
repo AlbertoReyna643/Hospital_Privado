@@ -1,3 +1,6 @@
+#tcontent {
+	overflow: scroll;
+}
 th{
     background-color: #6183a2;
     color: #fff;

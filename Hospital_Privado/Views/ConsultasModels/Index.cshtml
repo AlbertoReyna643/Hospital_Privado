@@ -20,260 +20,263 @@
 <p>
     @*Html.ActionLink("Create New", "Create")*@
 </p>
-<table class="table-responsive">
-    <tr>
-        <th>Estatus</th>
-        <th>
-            @Html.DisplayNameFor(model => model.Consultorios.Consultorios)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Doctores.Nombre_Doctor)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Laboratorios.Laboratorio)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Pacientes.Nombre_Paciente)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Servicios.Servicios)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Descripcion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Hora_Atencion)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Fecha_Atencion)
-        </th>
-        <th>
-            Validación del Doctor
-            @*Html.DisplayNameFor(model => model.Validar)*@
-        </th>
-        @if (ViewBag.rol != 3)
-        {
+
+<div id="tcontent" style="overflow-x:auto;">
+    <table class="table-responsive">
+        <tr>
+            <th>Estatus</th>
             <th>
-                Validación del Administrador
-                @*Html.DisplayNameFor(model => model.ValidarAdmin)*@
+                @Html.DisplayNameFor(model => model.Consultorios.Consultorios)
             </th>
-        }
-        <th>
-            @Html.DisplayNameFor(model => model.Comentario)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Calificacion)
-        </th>
-        <th>Acciones</th>
-    </tr>
+            <th>
+                @Html.DisplayNameFor(model => model.Doctores.Nombre_Doctor)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Laboratorios.Laboratorio)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Pacientes.Nombre_Paciente)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Servicios.Servicios)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Descripcion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Hora_Atencion)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Fecha_Atencion)
+            </th>
+            <th>
+                Validación del Doctor
+                @*Html.DisplayNameFor(model => model.Validar)*@
+            </th>
+            @if (ViewBag.rol != 3)
+            {
+                <th>
+                    Validación del Administrador
+                    @*Html.DisplayNameFor(model => model.ValidarAdmin)*@
+                </th>
+            }
+            <th>
+                @Html.DisplayNameFor(model => model.Comentario)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Calificacion)
+            </th>
+            <th>Acciones</th>
+        </tr>
 
-    @foreach (var item in Model)
-    {
-        string nombresVal = ViewBag.nom;
+        @foreach (var item in Model)
+        {
+            string nombresVal = ViewBag.nom;
 
-        if (ViewBag.rol == 1)
-        {
-    <tr>
-        @if (item.Validar == null && item.Calificacion == null)
-        {
-            <!--#fd9240-->
-            <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
-        }
-        else if (item.Validar == 1 && item.Calificacion == null)
-        {
-            <!--#fdce30-->
-            <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
-        }
-        else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
-        {
-            <!--#78fd30-->
-            <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
-        }
-        else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
-        {
-            <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
-        }
-        <td>
-            @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Servicios.Servicios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Validar)
-        </td>
+            if (ViewBag.rol == 1)
+            {
+                <tr>
+                    @if (item.Validar == null && item.Calificacion == null)
+                    {
+                        <!--#fd9240-->
+                        <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
+                    }
+                    else if (item.Validar == 1 && item.Calificacion == null)
+                    {
+                        <!--#fdce30-->
+                        <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
+                    }
+                    else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                    {
+                        <!--#78fd30-->
+                        <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
+                    }
+                    else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
+                    {
+                        <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Servicios.Servicios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Validar)
+                    </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.ValidarAdmin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Calificacion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-        }
-        else if (nombresVal == item.Doctores.Nombre_Doctor && ViewBag.rol == 2)
-        {
-    <tr>
-        @if (item.Validar == null && item.Calificacion == null)
-        {
-            <!--#fd9240-->
-            <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
-        }
-        else if (item.Validar == 1 && item.Calificacion == null)
-        {
-            <!--#fdce30-->
-            <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
-        }
-        else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
-        {
-            <!--#78fd30-->
-            <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
-        }
-        else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
-        {
-            <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
-        }
-        <td>
-            @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Servicios.Servicios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Validar)
-        </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValidarAdmin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            else if (nombresVal == item.Doctores.Nombre_Doctor && ViewBag.rol == 2)
+            {
+                <tr>
+                    @if (item.Validar == null && item.Calificacion == null)
+                    {
+                        <!--#fd9240-->
+                        <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
+                    }
+                    else if (item.Validar == 1 && item.Calificacion == null)
+                    {
+                        <!--#fdce30-->
+                        <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
+                    }
+                    else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                    {
+                        <!--#78fd30-->
+                        <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
+                    }
+                    else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
+                    {
+                        <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Servicios.Servicios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Validar)
+                    </td>
 
-        <td>
-            @Html.DisplayFor(modelItem => item.ValidarAdmin)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Calificacion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
-        </td>
-    </tr>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.ValidarAdmin)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
+            else if (nombresVal == item.Pacientes.Nombre_Paciente && ViewBag.rol == 3)
+            {
+                <tr>
+                    @if (item.Validar == null && item.Calificacion == null)
+                    {
+                        <!--<td style="background-color:#fd9240; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
+                    }
+                    else if (item.Validar == 1 && item.Calificacion == null)
+                    {
+                        <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
+                    }
+                    else if (item.Validar >= 1 && item.Calificacion > 0)
+                    {
+                        <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
+                        <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
+                    }
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Servicios.Servicios)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Descripcion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Hora_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Fecha_Atencion)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Validar)
+                    </td>
+                    <!--
+                    <td>
+                        @*Html.DisplayFor(modelItem => item.ValidarAdmin)*@
+                    </td>
+                    -->
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Comentario)
+                    </td>
+                    <td>
+                        @Html.DisplayFor(modelItem => item.Calificacion)
+                    </td>
+                    <td>
+                        @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                        @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                        @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                    </td>
+                </tr>
+            }
         }
-        else if (nombresVal == item.Pacientes.Nombre_Paciente && ViewBag.rol == 3)
-        {
-    <tr>
-        @if (item.Validar == null && item.Calificacion == null)
-        {
-            <!--<td style="background-color:#fd9240; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
-        }
-        else if (item.Validar == 1 && item.Calificacion == null)
-        {
-            <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
-        }
-        else if (item.Validar >= 1 && item.Calificacion > 0)
-        {
-            <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
-            <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
-        }
-        <td>
-            @Html.DisplayFor(modelItem => item.Consultorios.Consultorios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Doctores.Nombre_Doctor)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Laboratorios.Laboratorio)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Pacientes.Nombre_Paciente)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Servicios.Servicios)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Descripcion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Hora_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Fecha_Atencion)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Validar)
-        </td>
-        <!--
-    <td>
-        @*Html.DisplayFor(modelItem => item.ValidarAdmin)*@
-    </td>
-    -->
-        <td>
-            @Html.DisplayFor(modelItem => item.Comentario)
-        </td>
-        <td>
-            @Html.DisplayFor(modelItem => item.Calificacion)
-        </td>
-        <td>
-            @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-            @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
-            @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
-        </td>
-    </tr>
-        }
-    }
 
-</table>
+    </table>
+</div>

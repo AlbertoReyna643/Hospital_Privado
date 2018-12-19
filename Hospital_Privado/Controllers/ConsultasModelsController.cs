@@ -77,6 +77,13 @@ namespace Hospital_Privado.Controllers
 				var nombre = currentUser.Nombre;
 				ViewBag.nom = nombre;
 			}
+
+			List<SelectListItem> itemsCon = new List<SelectListItem>();
+			itemsCon.Add(new SelectListItem { Text = "- Validar -" });
+			itemsCon.Add(new SelectListItem { Text = "Si", Value = "0" });
+			itemsCon.Add(new SelectListItem { Text = "No", Value = "1" });
+			ViewBag.ValDoc = itemsCon;
+
 			ViewBag.ConsultoriosId = new SelectList(db.ConsultoriosModels, "Id", "Consultorios");
             ViewBag.DoctoresId = new SelectList(db.DoctoresModels, "Id", "Nombre_Doctor");
             ViewBag.LaboratoriosId = new SelectList(db.LaboratoriosModels, "Id", "Laboratorio");

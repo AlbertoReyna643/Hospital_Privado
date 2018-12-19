@@ -95,6 +95,75 @@
     </div>
 </div>
 
+<script type='text/javascript'>
+    var map, baseLayer, tools, currentShape;
+
+    function GetMap() {
+        var loc1 = new Microsoft.Maps.Location(19.409116, -99.317112); //Schloßplatz coords
+        var navigationBarMode1 = Microsoft.Maps.NavigationBarMode;
+        map = new Microsoft.Maps.Map('#myMap', {
+            credentials: 'AoTnLEzslSZQ8o8NOVQPsbL6DjGm9CSlgYWdgrC1fGiee7EYEBTZIfBvvxUq1cJJ',
+            navigationBarMode: navigationBarMode1.compact, //uncomment to show/hide compact navigation bar
+            mapTypeId: Microsoft.Maps.MapTypeId.aerial,
+            center: loc1,
+            zoom: 16,
+            showBreadcrumb: true
+        });
+
+        //Create a base layer to add drawn shapes.
+        baseLayer = new Microsoft.Maps.Layer();
+        map.layers.insert(baseLayer);
+
+        //Load the DrawingTools module.
+        Microsoft.Maps.loadModule('Microsoft.Maps.DrawingTools', function () {
+            //Create an instance of the DrawingTools class and bind it to the map.
+            tools = new Microsoft.Maps.DrawingTools(map);
+
+            Microsoft.Maps.Events.addHandler(tools, 'drawingChanging', function (e) {
+                //When the drawing is changing, clear the base layer.
+                baseLayer.clear();
+            });
+
+
+            //When the user presses 'esc', take the polygon out of edit mode and re-add to base map.
+            document.getElementById('myMap').onkeypress = function (e) {
+                if (e.charCode === 27) {
+                    tools.finish(shapeDrawn);
+                    currentShape = null;
+                }
+            };
+        });
+    }
+
+    function drawPolygon() {
+        //Stop any current drawing.
+        if (currentShape) {
+            tools.finish(shapeDrawn);
+            currentShape = null;
+        }
+
+        //Create a new polygon.
+        tools.create(Microsoft.Maps.DrawingTools.ShapeType.polygon, function (s) {
+            currentShape = s;
+        });
+    }
+
+    function shapeDrawn(s) {
+        baseLayer.add(s);
+    }
+</script>
+<script type='text/javascript' src='https://www.bing.com/api/maps/mapcontrol?callback=GetMap' async defer></script>
+<div class="row">
+    <div class="col-md-offset-2 col-md-6">
+        <div id='printoutPanel'></div>
+        <h1>Aquí nos ubicamos!</h1>
+        <h2>BARRIO EL RÍO, S/N, LA MAGDALENA CHICHICASPA, MUNICIPIO DE HUIXQUILUCAN, ESTADO DE MÉXICO C.P. 52773</h2>
+        <div id="myMap" style="position:relative;width:600px;height:400px;"></div>
+    </div>
+</div>
+
+<!--
+
 <div class="row">
     <div class="col-md-offset-2 col-md-6">
         <div id='printoutPanel'></div>
@@ -140,3 +209,5 @@
 </script>
 
 <script type='text/javascript' src='http://www.bing.com/api/maps/mapcontrol?branch=experimental&callback=loadMapScenario' async defer></script>
+
+    -->

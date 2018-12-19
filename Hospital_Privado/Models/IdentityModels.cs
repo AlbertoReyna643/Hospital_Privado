@@ -3,7 +3,7 @@ using System.Security.Claims;
 using System.Threading.Tasks;
 using Microsoft.AspNet.Identity;
 using Microsoft.AspNet.Identity.EntityFramework;
-
+	
 namespace Hospital_Privado.Models
 {
     // You can add profile data for the user by adding more properties to your ApplicationUser class, please visit https://go.microsoft.com/fwlink/?LinkID=317594 to learn more.
@@ -48,7 +48,8 @@ namespace Hospital_Privado.Models
     public class ApplicationDbContext : IdentityDbContext<ApplicationUser>
     {
         public ApplicationDbContext()
-            : base("AzureConnection", throwIfV1Schema: false)
+			//: base("DefaultConnection", throwIfV1Schema: false)
+			: base("AzureConnection", throwIfV1Schema: false)
         {
         }
 

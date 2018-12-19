@@ -365,5 +365,40 @@ namespace Hospital_Privado.Controllers
             }
             base.Dispose(disposing);
         }
-    }
+
+		public ActionResult BotPat()
+		{
+			if (Request.IsAuthenticated)
+			{
+				var currentUserId = User.Identity.GetUserId();
+				var manager = new UserManager<Hospital_Privado.Models.ApplicationUser>(new UserStore<Hospital_Privado.Models.ApplicationUser>(new Hospital_Privado.Models.ApplicationDbContext()));
+				var currentUser = manager.FindById(currentUserId);
+				var RolId = currentUser.RolID;
+				ViewBag.rol = RolId;
+				var user = currentUser.UserName;
+				ViewBag.user = user;
+				var nombre = currentUser.Nombre;
+				ViewBag.nom = nombre;
+				var apepat = currentUser.Apellido_Paterno;
+				ViewBag.apep = apepat;
+				var apemat = currentUser.Apellido_Materno;
+				ViewBag.apem = apemat;
+				var edad = currentUser.Edad;
+				ViewBag.edad = edad;
+				var fechan = currentUser.Fecha_Nacimiento;
+				ViewBag.fechan = fechan;
+				var dom = currentUser.Domicilio;
+				ViewBag.dom = dom;
+				var edo = currentUser.Estado;
+				ViewBag.edo = edo;
+				var cdad = currentUser.Ciudad;
+				ViewBag.cdad = cdad;
+				var curp = currentUser.Curp;
+				ViewBag.curp = curp;
+				var idd = currentUser.Id;
+				ViewBag.idd = idd;
+			}
+			return View();
+		}
+	}
 }

@@ -21,46 +21,48 @@
 </p>
 -->
 
-<table class="table">
-    <tr>
-        <th>
-            @Html.DisplayNameFor(model => model.Nombre_Administrador)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido_Paterno)
-        </th>
-        <th>
-            @Html.DisplayNameFor(model => model.Apellido_Materno)
-        </th>
-        <th>
-            Acciones
-        </th>
-    </tr>
-
-    @foreach (var item in Model)
-    {
+<div id="tcontent" style="overflow-x:auto;">
+    <table class="table">
         <tr>
-            <td>
-                @Html.DisplayFor(modelItem => item.Nombre_Administrador)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido_Paterno)
-            </td>
-            <td>
-                @Html.DisplayFor(modelItem => item.Apellido_Materno)
-            </td>
-            <td>
-                <!--<a href="Edit" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/edit.png" alt="Alternate Text" style="width:20px;" /></a>
-                <a href="Details" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/delete.png" alt="Alternate Text" style="width:20px;" /></a>
-                <a href="Delete" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/update.png" alt="Alternate Text" style="width:20px;" /></a>-->
-                @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
-                @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
-                @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
-            </td>
+            <th>
+                @Html.DisplayNameFor(model => model.Nombre_Administrador)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Paterno)
+            </th>
+            <th>
+                @Html.DisplayNameFor(model => model.Apellido_Materno)
+            </th>
+            <th>
+                Acciones
+            </th>
         </tr>
-    }
 
-</table>
+        @foreach (var item in Model)
+        {
+            <tr>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Nombre_Administrador)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Paterno)
+                </td>
+                <td>
+                    @Html.DisplayFor(modelItem => item.Apellido_Materno)
+                </td>
+                <td>
+                    <!--<a href="Edit" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/edit.png" alt="Alternate Text" style="width:20px;" /></a>
+                    <a href="Details" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/delete.png" alt="Alternate Text" style="width:20px;" /></a>
+                    <a href="Delete" id = "item.Id"><img src="~/Content/My_Bootstrap/img/my_img/iconos/update.png" alt="Alternate Text" style="width:20px;" /></a>-->
+                    @Html.ActionLink("Editar", "Edit", new { id = item.Id }) |
+                    @Html.ActionLink("Detalles", "Details", new { id = item.Id }) |
+                    @Html.ActionLink("Eliminar", "Delete", new { id = item.Id })
+                </td>
+            </tr>
+        }
+
+    </table>
+</div>
 @section Scripts {
     @Scripts.Render("~/bundles/jqueryval")
 }
