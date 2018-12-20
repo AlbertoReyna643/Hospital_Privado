@@ -82,19 +82,19 @@
                         <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
                     }
-                    else if (item.Validar == 1 && item.Calificacion == null)
+                    else if (item.Validar != null && item.Calificacion == null)
                     {
                         <!--#fdce30-->
                         <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
                     }
-                    else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                    else if (item.Validar != null && item.ValidarAdmin == null && item.Calificacion != null)
                     {
                         <!--#78fd30-->
                         <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
                     }
-                    else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
+                    else if (item.Validar != null && item.ValidarAdmin != null && item.Calificacion != null)
                     {
                         <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
@@ -152,19 +152,19 @@
                         <!--<td style="background-color:#ec4848; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
                     }
-                    else if (item.Validar == 1 && item.Calificacion == null)
+                    else if (item.Validar != null && item.Calificacion == null)
                     {
                         <!--#fdce30-->
                         <!--<td style="background-color:#f88502; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
                     }
-                    else if (item.Validar >= 1 && item.ValidarAdmin == null && item.Calificacion > 0)
+                    else if (item.Validar != null && item.ValidarAdmin == null && item.Calificacion != null)
                     {
                         <!--#78fd30-->
                         <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO VALIDACIÓN DE ADMINISTRADOR</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/4.png" alt="ESPERANDO VALIDACIÓN DE ADMINISTRADOR" width="55px;" /></td>
                     }
-                    else if (item.Validar >= 1 && item.ValidarAdmin >= 1 && item.Calificacion > 0)
+                    else if (item.Validar != null && item.ValidarAdmin != null && item.Calificacion != null)
                     {
                         <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
@@ -221,12 +221,12 @@
                         <!--<td style="background-color:#fd9240; color:#fff;">ESPERANDO VALIDACIÓN DE DOCTOR</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/2.png" alt="ESPERANDO VALIDACIÓN DE DOCTOR" width="55px;" /></td>
                     }
-                    else if (item.Validar == 1 && item.Calificacion == null)
+                    else if (item.Validar != null && item.Calificacion == null)
                     {
                         <!--<td style="background-color:#fdce30; color:#fff;">ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/3.png" alt="ESPERANDO CALIFICACION Y COMENTARIOS DEL PACIENTE" width="55px;" /></td>
                     }
-                    else if (item.Validar >= 1 && item.Calificacion > 0)
+                    else if (item.Validar != null && item.Calificacion != null)
                     {
                         <!--<td style="background-color:#78fd30; color:#fff;">OK</td>-->
                         <td><img src="~/Content/My_Bootstrap/img/my_img/iconos/1.png" alt="OK" width="55px;" /></td>
